@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>米橙</title>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="mc">
+        <div class="logo-wrap">
+            <img src="./images/remind-logo.png" alt="logo" class="logo"/>
+        </div>
+        <div class="title-wrap top">
+            <p class="first-title">米橙提醒</p>
+            <p class="second-title mt22">聚合生活必备信息的提醒助手</p>
+        </div>
+        <div class="download-wrap">
+            <button class="download download-remind btn-position">立即安装</button>
+            <a class="detail-wrap mt32" href="./m-remind.html">
+                <p class="detail">了解详情<img src="./images/arrow.png" alt="arrow" class="arrow"/></p>
+            </a>
+        </div>
+    </div>
+    <div class="grey"></div>
+    <div class="mc">
+        <div class="logo-wrap">
+            <img src="./images/browser-logo.png" alt="logo" class="logo"/>
+        </div>
+        <div class="title-wrap top">
+            <p class="first-title">米橙浏览器</p>
+            <p class="second-title mt22">聚合搜索&nbsp;|&nbsp;以图搜图&nbsp;|&nbsp;兴趣阅读</p>
+        </div>
+        <div class="download-wrap">
+            <button class="download download-browser btn-position">立即安装</button>
+            <a class="detail-wrap mt32" href="./m-browser.html">
+                <p class="detail">了解详情<img src="./images/arrow.png" alt="arrow" class="arrow"/></p>
+            </a>
+        </div>
+    </div>
+    <div class="footer">
+        <p class="contact">深圳米橙科技有限公司&nbsp;|&nbsp;0755-26602680</p>
+        <p class="contact mt10">Shenzhen&nbsp;Micheng&nbsp;Technology&nbsp;Co.,Ltd&nbsp;©&nbsp;Copyright.</p>
+    </div>    
+    <script>
+        //提醒下载
+        var isAndroid = window.navigator.userAgent.toLowerCase().indexOf('android') > -1 || window.navigator.userAgent.toLowerCase().indexOf('adr') > -1;
+        var isiOS = !!window.navigator.userAgent.toLowerCase().match(/\(i[^;]+;( u;)? cpu.+mac os x/);
+        document.getElementsByClassName('download-remind')[0].addEventListener("click", function(e){
+            if(e.target.className && e.target.className.indexOf("download-remind") > -1) {
+                // alert("敬请期待...");
+                if(isiOS) {
+                    window.location.href = "https://url.mc.cn/UZJFVvaa"; // "https://itunes.apple.com/us/app/米橙/id1340082291?l=zh&ls=1&mt=8";
+                    return;
+                }
+                if(isAndroid) {
+                    window.location.href = "https://url.mc.cn/b6va2yaa";
+                    return;
+                }
+                alert("请使用手机下载APP");
+            }
+        })  
+
+        //浏览器下载
+        /*
+        * 智能机浏览器版本信息:
+        */
+        var browser = {
+            versions: function() {
+                var u = navigator.userAgent,
+                    app = navigator.appVersion;
+                return { //移动终端浏览器版本信息 
+                    trident: u.indexOf('Trident') > -1, //IE内核
+                    presto: u.indexOf('Presto') > -1, //opera内核
+                    webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                    gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                    mobile: !!u.match(/AppleWebKit.*Mobile.*/) || !!u.match(/AppleWebKit/), //是否为移动终端
+                    ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                    android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                    iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者QQHD浏览器
+                    iPad: u.indexOf('iPad') > -1, //是否iPad
+                    webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+                };
+
+            }(),
+            language: (navigator.browserLanguage || navigator.language).toLowerCase()
+        };
+
+        // 判断是微信
+        function isWeiXin() {
+            var ua = window.navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+                window.location = "http://android.myapp.com/myapp/detail.htm?apkName=com.mc.browser";
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        document.getElementsByClassName('download-browser')[0].addEventListener("click", function(e){
+            if(e.target.className && e.target.className.indexOf("download-browser") > -1) {
+                if (!isWeiXin()) {
+                    if (browser.versions.ios || browser.versions.iPhone || browser.versions.iPad) {
+                        window.location = "https://itunes.apple.com/cn/app/%E7%B1%B3%E6%A9%99%E6%B5%8F%E8%A7%88%E5%99%A8/id1377987668";
+                    } else if (browser.versions.android) {
+                        window.location = "http://b-i-f.mc.cn/apk/mc-browser.apk";
+                    } else {
+                        // window.location = "https://mc.cn";
+                        window.location = "http://b-i-f.mc.cn/apk/mc-browser.apk";
+                    }
+                } else {
+                    if (browser.versions.android) {
+                        window.location = "http://android.myapp.com/myapp/detail.htm?apkName=com.mc.browser";
+                    } else if (browser.versions.ios || browser.versions.iPhone || browser.versions.iPad) {
+                        window.location = "https://itunes.apple.com/cn/app/%E7%B1%B3%E6%A9%99%E6%B5%8F%E8%A7%88%E5%99%A8/id1377987668";
+                    }
+                }
+            }
+        })  
+    </script>
+</body>
+</html>

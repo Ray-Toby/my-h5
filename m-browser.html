@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <title>米橙浏览器</title>
+    <link rel="stylesheet" href="./css/public.css?v=1.00">
+    <link rel="stylesheet" href="./css/mc.css?v=1.02">
+    <!-- <script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);
+        flex(100, 1);
+    </script> -->
+</head>
+<body>
+    <div id="menu-wrap">
+        <label class="btn-openMenus">
+            <span class="btn-openMenus-icon-bread btn-openMenus-icon-bread-top">
+                <span class="btn-openMenus-icon-bread-crust btn-openMenus-icon-bread-crust-top"></span>
+            </span>
+            <span class="btn-openMenus-icon-bread btn-openMenus-icon-bread-bottom">
+                <span class="btn-openMenus-icon-bread-crust btn-openMenus-icon-bread-crust-bottom"></span>
+            </span>
+        </label>
+        <div id="menus">
+            <a href="m-remind.html">米橙提醒</a>
+            <a href="m-browser.html">米橙浏览器</a>
+        </div>
+    </div>
+    <header id="top" class="top">
+        <p>米橙浏览器</p>
+        <p>聚合搜索&nbsp;|&nbsp;以图搜图&nbsp;|&nbsp;兴趣阅读</p>
+        <button class="download download-browser mt64">立即安装</button>
+    </header>
+    <section id="main">
+        <div class="img-wrap img-wrap-position">
+            <p class="first-title mb38">聚合搜索</p>
+            <p class="second-title">多个引擎，随时切换结果</p>
+            <div class="border"></div>
+            <img src="./images/browser1.png" alt="browser1" class="img-phone img-wrap-position">
+            <img src="./images/bg-phone.png" alt="bg" class="bg-phone-left">
+            <div class="circular-left-big circular-light-orange circular-light-position1"></div>
+        </div>
+        <div class="img-wrap img-wrap-position">
+            <p class="first-title mb38">以图搜图</p>
+            <p class="second-title">框选图像，从此一探到底</p>
+            <div class="border"></div>
+            <img src="./images/browser2.png" alt="browser2" class="img-phone">
+            <img src="./images/bg-phone.png" alt="bg" class="bg-phone-right">
+            <div class="circular-right-big circular-light-orange circular-light-position2"></div>
+        </div>
+        <div class="img-wrap img-wrap-position">
+            <p class="first-title mb38">浮窗搜索</p>
+            <p class="second-title">长按咨询内容，浮窗直搜</p>
+            <div class="border"></div>
+            <img src="./images/browser3.png" alt="browser3" class="img-phone">
+            <img src="./images/bg-phone.png" alt="bg" class="bg-phone-left">
+            <div class="circular-left-big circular-light-orange circular-light-position3"></div>
+        </div>
+        <div class="img-wrap img-wrap-position">
+            <p class="first-title mb38">轻快纯粹</p>
+            <p class="second-title">简介轻便，从容不慌</p>
+            <div class="border"></div>
+            <img src="./images/browser4.png" alt="browser4" class="img-phone">
+            <img src="./images/bg-phone.png" alt="bg" class="bg-phone-right">
+            <div class="circular-right-big circular-light-orange circular-light-position4"></div>
+        </div>
+    </section>
+    <footer id="footer">
+        <p class="footer-title">聚合搜索、以图搜图、兴趣阅读</p>
+        <p class="footer-second-title">只为更好、更快的到达</p>
+        <button class="download download-browser mt90">立即安装</button>
+    </footer>
+    <img src="./images/bg-browser.png" alt="bg" class="bg-browser"/>
+    <script>
+        //浏览器下载
+        /*
+        * 智能机浏览器版本信息:
+        */
+        var browser = {
+            versions: function() {
+                var u = navigator.userAgent,
+                    app = navigator.appVersion;
+                return { //移动终端浏览器版本信息 
+                    trident: u.indexOf('Trident') > -1, //IE内核
+                    presto: u.indexOf('Presto') > -1, //opera内核
+                    webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                    gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                    mobile: !!u.match(/AppleWebKit.*Mobile.*/) || !!u.match(/AppleWebKit/), //是否为移动终端
+                    ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                    android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                    iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者QQHD浏览器
+                    iPad: u.indexOf('iPad') > -1, //是否iPad
+                    webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+                };
+
+            }(),
+            language: (navigator.browserLanguage || navigator.language).toLowerCase()
+        };
+
+        // 判断是微信
+        function isWeiXin() {
+            var ua = window.navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+                window.location = "http://android.myapp.com/myapp/detail.htm?apkName=com.mc.browser";
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        document.body.addEventListener("click", function(e){
+            if(e.target.className && e.target.className.indexOf("download-browser") > -1) {
+                if (!isWeiXin()) {
+                    if (browser.versions.ios || browser.versions.iPhone || browser.versions.iPad) {
+                        window.location = "https://itunes.apple.com/cn/app/%E7%B1%B3%E6%A9%99%E6%B5%8F%E8%A7%88%E5%99%A8/id1377987668";
+                    } else if (browser.versions.android) {
+                        window.location = "http://b-i-f.mc.cn/apk/mc-browser.apk";
+                    } else {
+                        // window.location = "https://mc.cn";
+                        window.location = "http://b-i-f.mc.cn/apk/mc-browser.apk";
+                    }
+                } else {
+                    if (browser.versions.android) {
+                        window.location = "http://android.myapp.com/myapp/detail.htm?apkName=com.mc.browser";
+                    } else if (browser.versions.ios || browser.versions.iPhone || browser.versions.iPad) {
+                        window.location = "https://itunes.apple.com/cn/app/%E7%B1%B3%E6%A9%99%E6%B5%8F%E8%A7%88%E5%99%A8/id1377987668";
+                    }
+                }
+            }
+        });
+        //菜单按钮
+        document.getElementsByClassName("btn-openMenus")[0].addEventListener("click", function(){
+            if(document.body.className
+                && document.body.className.indexOf("openMenus") > -1) {
+                    document.body.className = document.body.className.replace(/\s?openMenus/, "")
+            } else {
+                document.body.className += " openMenus";
+            }
+        }) 
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <title>米橙提醒</title>
+    <link rel="stylesheet" href="./css/public.css?v=1.00">
+    <link rel="stylesheet" href="./css/mc.css?v=1.02">
+</head>
+<body>
+    <div id="menu-wrap">
+        <label class="btn-openMenus">
+            <span class="btn-openMenus-icon-bread btn-openMenus-icon-bread-top">
+                <span class="btn-openMenus-icon-bread-crust btn-openMenus-icon-bread-crust-top"></span>
+            </span>
+            <span class="btn-openMenus-icon-bread btn-openMenus-icon-bread-bottom">
+                <span class="btn-openMenus-icon-bread-crust btn-openMenus-icon-bread-crust-bottom"></span>
+            </span>
+        </label>
+        <div id="menus">
+            <a href="m-remind.html">米橙提醒</a>
+            <a href="m-browser.html">米橙浏览器</a>
+        </div>
+    </div>
+    <header id="top" class="top">
+        <p>米橙提醒</p>
+        <p>聚合生活必备信息的提醒助手</p>
+        <button class="download download-remind mt64">立即安装</button>
+    </header>
+    <section id="main">
+        <div class="img-wrap img-wrap-position">
+            <p class="first-title mb44">强大的提醒逻辑</p>
+            <p class="second-title line-height52">居家、社交、商务、办公、出行<br/>你想要的都能创建</p>
+            <img src="./images/remind1.png" alt="remind1" class="img-phone">
+            <div class="circular-right circular-green-position"></div>
+            <div class="circular-left circular-blue-position"></div>
+        </div>
+        <div class="img-wrap">
+            <p class="first-title mb44">千方百计&nbsp;提醒到您</p>
+            <p class="second-title line-height52">发微信、打电话、发短信<br/>万千事件，无一错过</p>
+            <img src="./images/remind2.png" alt="remind2" class="img-phone">
+        </div>
+        <div class="img-wrap img-wrap-position">
+            <p class="first-title mb44">节日节气提醒</p>
+            <p class="second-title line-height52">法定节假日放假安排早知道<br/>全年节日、节气一目了然</p>
+            <img src="./images/remind3.png" alt="remind3" class="img-phone">
+            <div class="circular-right circular-red-position"></div>
+        </div>
+        <div class="img-wrap img-wrap-position">
+            <p class="first-title mb44">看农历，选择良辰吉日</p>
+            <p class="second-title line-height52">干净简洁，简单实用<br/>又全又准的中华万年历</p>
+            <img src="./images/remind4.png" alt="remind4" class="img-phone">
+            <div class="circular-left circular-light-green-position"></div>
+        </div>
+        <div class="img-wrap img-wrap-position">
+            <p class="first-title mb44">随时随地&nbsp;语音速记</p>
+            <p class="second-title line-height52">语音记录灵感，捕获灵光一闪<br/>思绪万千，皆在字里行间</p>
+            <img src="./images/remind5.png" alt="remind5" class="img-phone">
+            <div class="circular-right circular-orange-position"></div>
+        </div>
+    </section>
+    <footer id="footer">
+        <p class="footer-title">聚合生活必备信息的提醒助手</p>
+        <p class="footer-second-title line-height52">用米橙，不忘事</p>
+        <button class="download download-remind mt90">立即安装</button>
+    </footer>
+    <img class="bg-remind" src="./images/bg-remind.png" alt="bg" />
+    <script>
+        //提醒下载
+        var isAndroid = window.navigator.userAgent.toLowerCase().indexOf('android') > -1 || window.navigator.userAgent.toLowerCase().indexOf('adr') > -1;
+        var isiOS = !!window.navigator.userAgent.toLowerCase().match(/\(i[^;]+;( u;)? cpu.+mac os x/);
+        document.body.addEventListener("click", function(e){
+            if(e.target.className && e.target.className.indexOf("download-remind") > -1) {
+                // alert("敬请期待...");
+                if(isiOS) {
+                    window.location.href = "https://url.mc.cn/UZJFVvaa"; // "https://itunes.apple.com/us/app/米橙/id1340082291?l=zh&ls=1&mt=8";
+                    return;
+                }
+                if(isAndroid) {
+                    window.location.href = "https://url.mc.cn/b6va2yaa";
+                    return;
+                }
+                alert("请使用手机下载APP");
+            }
+        });
+        //菜单按钮
+        document.getElementsByClassName("btn-openMenus")[0].addEventListener("click", function(){
+            if(document.body.className
+                && document.body.className.indexOf("openMenus") > -1) {
+                    document.body.className = document.body.className.replace(/\s?openMenus/, "")
+            } else {
+                document.body.className += " openMenus";
+            }
+        })  
+    </script>
+</body>
+</html>
